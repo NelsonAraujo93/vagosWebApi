@@ -49,7 +49,6 @@ var pJS = function(tag_id, params, windows){
 
     /* launch particle.js */
     if(canvas != null){
-      console.log(canvas);
     }
   };
 
