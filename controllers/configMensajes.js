@@ -5,6 +5,7 @@ const nodemailer = require('nodemailer');
 module.exports = (formulario) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
+        port:587,
        // secure: true,
         auth: {
         user: 'EstudioVagos@gmail.com', // Cambialo por tu email
