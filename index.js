@@ -6,14 +6,18 @@ var port = 3900;
 var fs = require('fs');
 var https = require('https');
 
-var key = fs.readFileSync('encryption/server.key');
-var cert = fs.readFileSync( 'encryption/server.crt' );
-var options = {
-    key: key,
-    cert: cert
-  };
 
+const privateKey = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/privkey.pem', 'utf8');
+const certificate = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/cert.pem', 'utf8');
+const ca = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/chain.pem', 'utf8');
+
+const options = {
+	key: privateKey,
+	cert: certificate,
+	ca: ca
+};
 var server = https.createServer(options, app);
+
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
