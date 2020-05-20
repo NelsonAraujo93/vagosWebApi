@@ -147,9 +147,10 @@ var controller = {
 
     formularioCorreo: (req, res) => {
         configMensaje(req.body);
+        console.log(res);
         return res.status(200).send({
             status: 'Ok',
-            mesage: res
+            mesage: 'Mensaje enviado'
         });
     },
 
