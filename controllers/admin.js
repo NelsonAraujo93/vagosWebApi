@@ -149,7 +149,7 @@ var controller = {
         configMensaje(req.body);
         return res.status(200).send({
             status: 'Ok',
-            mesage: 'mensaje Enviado'
+            mesage: res
         });
     },
 
