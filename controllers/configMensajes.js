@@ -1,16 +1,16 @@
 'use strict'
 
 const nodemailer = require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
+//var smtpTransport = require('nodemailer-smtp-transport');
 module.exports = (formulario) => {
-    var transporter = nodemailer.createTransport(smtpTransport({
+    var transporter = nodemailer.createTransport({
         service: 'gmail',
-        secure: true,
+       // secure: true,
         auth: {
         user: 'EstudioVagos@gmail.com', // Cambialo por tu email
         pass: 'EstudioVagos999' // Cambialo por tu password
         }
-    }));
+    });
     const mailOptions = {
         from: formulario.nombre + '<' + formulario.email+'>',
         to: 'EstudioVagos@gmail.com', // Cambia esta parte por el destinatario
