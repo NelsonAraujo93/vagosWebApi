@@ -9,7 +9,7 @@ module.exports = (formulario) => {
         secure: true,
         auth: {
         user: 'EstudioVagos@gmail.com', // Cambialo por tu email
-        pass: 'EstudioVagos999' // Cambialo por tu password
+        pass: 'Vagos999Estudios' // Cambialo por tu password
         }
     });
     const mailOptions = {
