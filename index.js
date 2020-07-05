@@ -18,7 +18,7 @@ const options = {
 	ca: ca
 };
 var server = https.createServer(options, app);
-//var serverHttp =http.createServer(app).listen(3910);
+http.createServer(app).listen(80);
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
