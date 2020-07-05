@@ -5,6 +5,7 @@ var app = require('./app'); //importo el modulo app
 var port = 3900;
 var fs = require('fs');
 var https = require('https');
+var http = require('http');
 
 
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/privkey.pem', 'utf8');
@@ -17,7 +18,7 @@ const options = {
 	ca: ca
 };
 var server = https.createServer(options, app);
-
+//var serverHttp =http.createServer(app).listen(3910);
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
@@ -28,6 +29,9 @@ mongoose.connect('mongodb://localhost:27017/vagos-db', { useNewUrlParser: true }
 
         //crear servidor para escuchar peticionoes
         server.listen(port, () => {
-            console.log("server starting on port : " + port)
+            console.log("server starting on port : " + port);
         });
+        /*serverHttp.listen(port, () => {
+            console.log("server starting on port : " + port)
+        });*/
     });

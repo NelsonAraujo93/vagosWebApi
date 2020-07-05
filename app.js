@@ -31,7 +31,7 @@ app.use('/vagos', adminRoutes);
 
 app.get('*', function(req,res,next){
     res.sendFile(path.resolve('VagosApi/index.html'));
-})
+});
 //exportar el modulo (fichero actual)
 
 module.exports = app;
