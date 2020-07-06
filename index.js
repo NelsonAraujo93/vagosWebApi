@@ -34,7 +34,7 @@ mongoose.connect('mongodb://localhost:27017/vagos-db', { useNewUrlParser: true }
         server.listen(port, () => {
             console.log("server starting on port : " + port);
         });
-        httpServer.listen(pott, () => {
+        /*httpServer.listen(pott, () => {
             console.log("server starting on porto : " + pott);
-        });
+        });*/
     });
