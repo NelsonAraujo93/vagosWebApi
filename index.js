@@ -1,14 +1,13 @@
 'use strict'
-
 var express = require('express');
 var mongoose = require('mongoose');
 var app = require('./app'); //importo el modulo app
+var appHttp = require('./appHttp'); 
 var port = 3900;
 var pott = 8080;
 var fs = require('fs');
 var https = require('https');
 var http = require('http');
-const httpApp = express();
 
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/cert.pem', 'utf8');
@@ -21,8 +20,8 @@ const options = {
 };
 var server = https.createServer(options, app);
 
-httpApp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:3900/vagos/'));
-const httpServer = http.createServer(httpApp);
+appHttp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:3900'));
+const httpServer = http.createServer(appHttp);
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
