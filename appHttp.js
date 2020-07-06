@@ -24,14 +24,11 @@ appHttp.use((req, res, next) => {
     next();
 });
 
-//prefijos a las rutas
+app.use('/', express.static('VagosApi',{redirect:false}));
+app.use('/vagos', adminRoutes);
 
-//appHttp.use('/', express.static('VagosApi',{redirect:false}));
-appHttp.use('/vagos', adminRoutes);
-
-/*appHttp.get('*', function(req,res,next){
+app.get('*', function(req,res,next){
     res.sendFile(path.resolve('VagosApi/index.html'));
-})*/
-//exportar el modulo (fichero actual)
+});
 
 module.exports = appHttp;
