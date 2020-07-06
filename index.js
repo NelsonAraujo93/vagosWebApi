@@ -21,7 +21,7 @@ const options = {
 };
 var server = https.createServer(options, app);
 
-httpApp.all('*', (req, res) => res.redirect(301, 'https://localhost:3900'));
+httpApp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:3900'));
 const httpServer = http.createServer(httpApp);
 
 mongoose.set('useFindAndModify', false);
