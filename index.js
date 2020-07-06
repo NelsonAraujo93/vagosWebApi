@@ -2,12 +2,12 @@
 //var express = require('express');
 var mongoose = require('mongoose');
 var app = require('./app'); //importo el modulo app
-//var appHttp = require('./appHttp'); 
+var appHttp = require('./appHttp'); 
 var port = 3900;
-//var pott = 8080;
+var pott = 8080;
 var fs = require('fs');
 var https = require('https');
-//var http = require('http');
+var http = require('http');
 
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/privkey.pem', 'utf8');
 const certificate = fs.readFileSync('/etc/letsencrypt/live/vagosstudios.com/cert.pem', 'utf8');
