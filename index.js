@@ -20,8 +20,8 @@ const options = {
 };
 var server = https.createServer(options, app);
 
-//appHttp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:443'));
-//const httpServer = http.createServer(appHttp);
+appHttp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:3900'));
+const httpServer = http.createServer(appHttp);
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
@@ -34,7 +34,7 @@ mongoose.connect('mongodb://localhost:27017/vagos-db', { useNewUrlParser: true }
         server.listen(port, () => {
             console.log("server starting on port : " + port);
         });
-        /*httpServer.listen(pott, () => {
+        httpServer.listen(pott, () => {
             console.log("server starting on porto : " + pott);
-        });*/
+        });
     });
