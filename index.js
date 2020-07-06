@@ -20,7 +20,7 @@ const options = {
 };
 var server = https.createServer(options, app);
 
-appHttp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:3900'));
+//appHttp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:3900'));
 const httpServer = http.createServer(appHttp);
 
 mongoose.set('useFindAndModify', false);
