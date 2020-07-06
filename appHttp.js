@@ -24,10 +24,10 @@ appHttp.use((req, res, next) => {
     next();
 });
 
-app.use('/', express.static('VagosApi',{redirect:false}));
-app.use('/vagos', adminRoutes);
+appHttp.use('/', express.static('VagosApi',{redirect:false}));
+appHttp.use('/vagos', adminRoutes);
 
-app.get('*', function(req,res,next){
+appHttp.get('*', function(req,res,next){
     res.sendFile(path.resolve('VagosApi/index.html'));
 });
 

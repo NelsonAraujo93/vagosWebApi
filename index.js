@@ -2,7 +2,7 @@
 //var express = require('express');
 var mongoose = require('mongoose');
 var app = require('./app'); //importo el modulo app
-//var appHttp = require('./appHttp'); 
+var appHttp = require('./appHttp'); 
 var port = 3900;
 var pott = 8080;
 var fs = require('fs');
