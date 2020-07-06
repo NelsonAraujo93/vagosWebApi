@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var app = require('./app'); //importo el modulo app
 var port = 3900;
-var pott =3902;
+var pott =3900;
 var fs = require('fs');
 //var https = require('https');
 var http = require('http');
