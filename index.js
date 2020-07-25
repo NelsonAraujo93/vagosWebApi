@@ -2,9 +2,7 @@
 //var express = require('express');
 var mongoose = require('mongoose');
 var app = require('./app'); //importo el modulo app
-var appHttp = require('./appHttp'); 
 var port = 3900;
-var pott = 8080;
 var fs = require('fs');
 //var https = require('https');
 var http = require('http');
@@ -21,7 +19,7 @@ const options = {
 //var server = https.createServer(options, app);
 
 //appHttp.all('*', (req, res) => res.redirect(301, 'https://vagosstudios.com:3900'));
-const httpServer = http.createServer(appHttp);
+const httpServer = http.createServer(app);
 
 mongoose.set('useFindAndModify', false);
 mongoose.Promise = global.Promise;
